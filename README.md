@@ -324,6 +324,23 @@ Ok to proceed? (y)
 │
 ```
 
+Prop drilling in React is the process of passing data (props) from a parent component down through multiple layers of nested child components until it reaches a deeply nested component that actually needs it.
 
+React 16: introduced Context to avoid props-drill
+
+Understanding children property:
+```
+A and B are children
+    <Parent>
+            <A />
+            <B />
+    </Parent>
+
+D and E are children
+    <Parent>
+            <D />
+            <E />
+    </Parent>
+```
 
 
