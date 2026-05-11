@@ -1,0 +1,75 @@
+{
+  "questions": [
+    {
+      "index": 1,
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Politics",
+      "question": "Who was the only president to not be in office in Washington D.C?",
+      "correct_answer": "George Washington",
+      "options": [
+        "Abraham Lincoln",
+        "Richard Nixon",
+        "George Washington",
+        "Thomas Jefferson"
+      ]
+    },
+    {
+         "index": 2,
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Music",
+      "question": "Chino Moreno is the lead singer of which alternative metal band?",
+      "correct_answer": "Deftones",
+      "options": [
+        "Tool",
+        "Korn",
+        "Deftones",
+        "Type O Negative"
+      ]
+    },
+    {
+         "index": 3,
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "History",
+      "question": "How old was Lyndon B. Johnson when he assumed the role of President of the United States?",
+      "correct_answer": "55",
+      "options": [
+        "55",
+        "50",
+        "60",
+        "54"
+      ]
+    },
+    {
+         "index": 4,
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Celebrities",
+      "question": "What was the name of Marilyn Monroe&#039;s first husband?",
+      "correct_answer": "James Dougherty",
+      "options": [
+        "James Dougherty",
+        "Joe Dimaggio",
+        "Kirk Douglas",
+        "Arthur Miller"
+      ]
+    },
+    {
+        "index": 4,
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Video Games",
+      "question": "Which Crypt of the NecroDancer (2015) character has a soundtrack by Jake &quot;Virt&quot; Kaufman?",
+      "correct_answer": "Uncle Eli",
+      "options": [
+        "Cadence",
+        "Nocturna",
+        "Uncle Eli",
+        "Octavian (Bard)"
+      ]
+    }
+
+  ]
+}
