@@ -343,4 +343,14 @@ D and E are children
     </Parent>
 ```
 
+Day 2:
+* Functional components instead of Class components.
+Why and How?
+complete application using 3rd party atoms and molecules
+* react-router-dom
+* axios for API calls
+* Bootstrap : responsive web design
+* Using React Context for State managment
+
+
 
