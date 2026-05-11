@@ -1,5 +1,6 @@
 import { Component } from "react";
 import CustomerRow from "./CustomerRow";
+import Filter from "./Filter";
 
 export default class CustomerList extends Component{
     x = 100; // state w.r.t OOP but not for React
@@ -71,7 +72,7 @@ export default class CustomerList extends Component{
 
     render() {
         return <div>
-            <h1>Customer List!!!</h1>
+            <Filter />
             {
                 this.state.customers.map(c => <CustomerRow customer={c} />)
             }

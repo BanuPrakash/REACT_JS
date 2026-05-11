@@ -5,9 +5,11 @@ export default class CustomerRow extends Component{
         // destructuring
          let {id, firstName, lastName, gender, imageUrl} = this.props.customer
         return <div>
-           <img src={imageUrl} />
-           <br/>
-           {firstName} {lastName}
+                    <img src={imageUrl} />
+                    <br/>
+                  {firstName} {lastName}
+                  &nbsp;
+                  <button type="button">Delete</button>
         </div>
     }
 }
