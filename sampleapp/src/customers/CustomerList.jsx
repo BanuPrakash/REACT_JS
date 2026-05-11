@@ -14,7 +14,7 @@ export default class CustomerList extends Component{
                 {
                     "id": 1,
                     "firstName": "Aarav",
-                    "lastName": "Sharma",
+                    "lastName": "Reddy",
                     "gender": "Male",
                     "imageUrl": "https://randomuser.me/api/portraits/men/1.jpg"
                 },
@@ -35,7 +35,7 @@ export default class CustomerList extends Component{
                 {
                     "id": 4,
                     "firstName": "Sneha",
-                    "lastName": "Patel",
+                    "lastName": "Joshi",
                     "gender": "Female",
                     "imageUrl": "https://randomuser.me/api/portraits/women/4.jpg"
                 },
@@ -70,11 +70,26 @@ export default class CustomerList extends Component{
                 ]
     }
 
+    deleteCustomer(id) {
+        let custs = this.state.customers.filter(c => c.id !== id);
+
+        // avoid below statement
+        // this.state.customers = custs; // state is modified, but no reconcilliation
+
+        // below code not only updates state but
+        // also triggers reconcilliation
+        this.setState({
+            customers: custs
+        })
+    }
+
     render() {
         return <div>
             <Filter />
             {
-                this.state.customers.map(c => <CustomerRow customer={c} />)
+                this.state.customers.map(c => <CustomerRow 
+                    delEvt = {(id) => this.deleteCustomer(id)} 
+                    customer={c} />)
             }
         </div>
     }
