@@ -266,3 +266,60 @@ In React, reconciliation is the internal process of updating the browser's DOM t
 
 ===========================
 
+https://legacy.reactjs.org/docs/reconciliation.html
+
+VDOM: Virtual DOM, possible future DOM
+
+===========
+
+state, props, event handling
+How to organize components 
+
+=====================================================
+React class component lifecycle methods:
+Mounting Phase
+```
+constructor() -> render() -> componentDidMount()
+initialize --> show UI with init data --> MAKE api calls and update the state
+
+Avoid making API calls in constructor --> leads to FCP issue
+First Contentful Paint -- Core Web Vitals
+```
+
+Updating Phase:
+```
+    shouldComponentUpdate() --> false
+
+    shouldComponentUpdate() -->  true --> render() --> componentDidUpdate() --> dependent API call
+
+```
+
+Unmounting Phase: componentWillUnmount() --> gets called before component is destroyed.
+Any thing like unsubscribe should be done here
+
+Example: componentDidMount() --> subscriripition for Stock Value update
+
+=========================
+
+React is a uni-directional data flow concept --> Flux architecture.
+Any state changes, it triggers re-rendering of all it's children
+
+```
+npm create vite@latest
+
+Ok to proceed? (y) 
+
+│
+◇  Project name:
+│  playground
+│
+◇  Select a framework:
+│  React
+│
+◇  Select a variant:
+│  JavaScript
+│
+◇  Install with npm and start now?
+│  Yes
+│
+```

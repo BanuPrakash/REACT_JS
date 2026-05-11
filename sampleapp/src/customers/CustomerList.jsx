@@ -159,7 +159,7 @@ export default class CustomerList extends Component{
         return <div>
             <Filter filterEvt={(txt) => this.filterCustomers(txt)}/>
             {
-                this.state.customers.map(c => <CustomerRow 
+                this.state.customers.map(c => <CustomerRow key={c.id}
                     delEvt = {(id) => this.deleteCustomer(id)} 
                     customer={c} />)
             }
