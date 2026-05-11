@@ -194,4 +194,19 @@ Ok to proceed? (y)
 
 ```
 
+vite server: small web server for development purpose only.
+
+1) Config: vite.config.js
+```
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port:3000,
+    open: true
+  }
+})
+
+```
+
+2) vite will place src/main.jsx in index.html file
 
