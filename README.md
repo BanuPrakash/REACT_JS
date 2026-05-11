@@ -210,3 +210,55 @@ export default defineConfig({
 
 2) vite will place src/main.jsx in index.html file
 
+3) main.jsx renders App.jsx
+
+============================
+
+Folder structures:
+```
+    src
+        products
+            ProductList.jsx
+            ProductCard.jsx
+        customers
+            CustomerList.jsx
+            CustomerRow.jsx
+            CustomerDetails.jsx
+        orders  
+            Orders.jsx
+        common
+            atoms [mostly 3rd party library]
+            molecules [ mostly 3rd party library]
+
+```
+
+Atomic Design is a methodology for creating design systems by breaking user interfaces down into five distinct hierarchical levels, inspired by chemistry.
+Atoms: Examples: Buttons, input fields, labels, icons, or color palettes.
+Molecules: form field with a label, Card
+Organisms: Collection of Molecules, list of Cards.
+Templates: Mobile Template, Tv Template
+
+
+3rd party libraries for atoms and molecules like: MUI, React bootstrap, kendoUI, Adobe web spectrum, prime react
+
+=====
+
+state and props.
+OOP: Object will have state and behaviour,
+Examples of state:
+1) balance of my banking account
+2) color of button
+3) caption of button
+4) name of employee
+
+Examples of Behaviour:
+1) credit() and debit()
+
+```
+map ==> transform
+for each customer is customers create <CustomerRow />
+
+```
+
+props: mechanism of passing data from parent to child
+
