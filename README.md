@@ -264,3 +264,4 @@ props: mechanism of passing data from parent to child
 
 In React, reconciliation is the internal process of updating the browser's DOM to match the most recent virtual representation of your UI. When a component's state or props change, React creates a new Virtual DOM tree and compares it with the previous one to determine exactly what changed
 
+Resume @ 2:00 after Lunch break
