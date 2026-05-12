@@ -1,7 +1,22 @@
-import React from 'react'
+import { useEffect } from "react";
+import { useState } from "react"
+import axios from "axios";
+import ProductCard from './ProductCard';
 
 export default function ProductList() {
+  let [products, setProducts] = useState([]);
+
+  // componentDidMount
+  useEffect(() => {
+    axios.get("https://dummyjson.com/products?limit=8")
+    .then(response => setProducts(response.data.products));
+  }, []);
+
   return (
-    <div>ProductList</div>
+    <div className="row">
+      {
+        products && products.map(product => <ProductCard product={product} key={product.id} />)
+      }
+    </div>
   )
 }

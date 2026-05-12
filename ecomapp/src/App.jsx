@@ -8,7 +8,6 @@ import { Suspense } from 'react'
 const CartComp = lazy(() => import('./cart/CartComp'))
 const Details = lazy (() => import('./products/Details'))
 
-
 function App() {
   return (
    <div className='container'>
