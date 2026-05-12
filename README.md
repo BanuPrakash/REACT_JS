@@ -346,11 +346,151 @@ D and E are children
 Day 2:
 * Functional components instead of Class components.
 Why and How?
-complete application using 3rd party atoms and molecules
+complete application using 3rd party atoms and molecules : ecom app
 * react-router-dom
 * axios for API calls
 * Bootstrap : responsive web design
 * Using React Context for State managment
 
 
+=====
+
+Day 2 Recap:
+```
+const list = createElement(
+  'ul', 
+  null, 
+  createElement('li', null, 'Item 1'),
+  createElement('li', null, 'Item 2')
+);
+
+Functional Component: returns JSX --> createElement --> JS Object --> renderer like react-dom/ react-tv, react-native
+
+Class Component: render() method --> JSX --> createElement --> JS Object --> renderer like react-dom/ react-tv, react-native
+
+Class Components extends Component [inherits]
+life-cycle methods:
+1) componentDidMount() called once when component is created and after constructor() and render()
+2) componentDidUpdate() called whenever state or props change
+3) componentWillUnmount() before component is destroyed: meant for releasing resources
+4) render() -> returns JSX
+
+Note: Class component state is assigned to a special member called "state"
+setState() method to mutate the state and trigger reconcilliation
+this.state.x = 100; // here state changes but will not be reflected in view 
+
+map() method is used to transform
+key : importance
+props: way you pass members  [data and functions] to children components
+```
+
+Functional Components: After React 16.8 version, React team recommends using Functional Components instead of class component
+```
+Core Benefits
+Simplicity and Readability: They use plain JavaScript functions, making them easier to read, write, and understand compared to the more verbose class syntax.
+
+Hooks Support introduced in React 16.8 version: With the introduction of React Hooks, functional components can manage state (useState) and handle side effects (useEffect), which previously required class components.Performance: 
+
+They are generally more lightweight because they avoid the overhead of creating class instances and managing complex lifecycle flows.
+
+Ease of Testing: Since they are "pure" functions that transform props into UI, they are much easier to test and reason about in isolation.
+
+No this Keyword: They eliminate the need for the this context, which often leads to bugs and confusion in JavaScript.
+
+Method reference issues in Class Component:
+
+Approach 1:
+This triggers "this" is undefined, Context is lost
+class SampleComponent extends Component {
+    state = {
+        "age": 18
+    }
+    doTask() {
+        this.setState({
+            age: this.state.age + 1
+        })
+    }
+
+    render() {
+        return <div>
+            <button onClick={this.doTask} type="button"> Change </button>
+        </div>
+    }
+}
+
+Approach 2: Works
+ render() {
+        return <div>
+            <button onClick={this.doTask.bind(this)} type="button"> Change </button>
+        </div>
+    }
+
+Approach 3: 
+class SampleComponent extends Component {
+    constructor() {
+        this.doTask = this.doTask.bind(this)
+    }
+    ...
+
+      render() {
+        return <div>
+            <button onClick={this.doTask} type="button"> Change </button>
+        </div>
+    }
+
+Approach 4:
+class SampleComponent extends Component {
+    state = {
+        "age": 18
+    }
+    doTask() {
+        this.setState({
+            age: this.state.age + 1
+        })
+    }
+
+    render() {
+        return <div>
+            <button onClick={() => this.doTask()} type="button"> Change </button>
+        </div>
+    }
+}
+```
+
+Why did we use class components until React 16.8 version?
+1) state
+2) componentLifeCycle methods
+
+React Hooks are functions that allow you to use state and other React features like componentLifeCycle in functional components. 
+Introduced in React 16.8, Hooks provide a way to manage state, side effects, and other logic without writing class components.
+
+React Hooks: Partial list
+1) useState
+useState is a React Hook that lets you add a state variable to your component.
+2) useEffect: simulate componentLifeCycle methods
+```
+    Empty dependency : componentDidMount looks like
+    useEffect(() => {
+
+    },[])
+
+    Dependency : componentDidUpdate looks like
+    gets called whenever age changes
+    useEffect(() => {
+
+    },[age])
+     gets called whenever name changes
+     useEffect(() => {
+
+    },[name])
+
+     gets called whenever name or age changes
+     useEffect(() => {
+
+    },[name, age])
+```
+3) useReducer
+4) useContext
+5) useRef
+6) useCallback
 
