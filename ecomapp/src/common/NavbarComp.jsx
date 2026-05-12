@@ -9,6 +9,7 @@ import { CartContext } from '../context/CartContextProvider';
 
 
 export default function NavbarComp() {
+  // get data from context
   let {quantity} = useContext(CartContext);
   return (
     <Navbar bg="dark" data-bs-theme="dark">

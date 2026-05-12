@@ -5,6 +5,9 @@ import { Button } from 'react-bootstrap';
 import CartRow from './CartRow';
 
 export default function CartComp() {
+  // get total and cartItems data from CartContext
+  // get clearCart function from CartContext
+
   let {total, cartItems, clearCart} = useContext(CartContext);
   return (
     <div className='container'>

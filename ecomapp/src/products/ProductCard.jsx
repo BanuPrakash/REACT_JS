@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { CartContext } from '../context/CartContextProvider';
 
 export default function ProductCard({product}) {
+  // get function from cartContext
   let {addToCart} = useContext(CartContext);
   let {id, title, description, price, images} = product;
   return (
