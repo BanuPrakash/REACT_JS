@@ -490,7 +490,63 @@ useState is a React Hook that lets you add a state variable to your component.
     },[name, age])
 ```
 3) useReducer
+hook to be used instead of useState if:
+a) state mutation is conditional
+b) state mutation depends on previous state
+c) state is complex
+
+State looks like:
+```
+    shoping cart looks like below
+    {
+        cartItems: [
+            {id: 5, "name": "A", qty: 2, "price": 100, "amount": 200}, 
+            {id:6, "name":"X", qty: 1, price: 500, amount: 490}
+         ],
+         total: 800.00
+         quantity: 2
+    }
+
+Action: Add to Cart:
+get existing state, add new item ti cartItems, update total, update quantity
+
+Action: INCREMENT
+get existing cartItem, update :qty, update "amount", update "total"
+
+Action "REMOVE"
+get existing cartItems, remove cartItem, re-compute total, and quantity
+```
+
+TaskManager:
+Actions: ADD TASK, REMOVE TASK, TOGGLE TASK [completed/ not completed]
+
+Action Objects:
+```
+{
+    type: "ADD_TASK",
+    payload: "Learn ReactJS"
+}
+
+{
+    "type":"TOGGLE_TASK",
+    payload: 2
+}
+{
+    type: "REMOVE_TASK",
+    payload: 5
+}
+
+{
+    type: "CLEAR_TASKS"
+}
+
+```
+for useReducer we need reducer functions:
+a reducer function is one which takes state and action, returns a new state, it's not a component
+
+
 4) useContext
 5) useRef
-6) useCallback
+
+
 
