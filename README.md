@@ -548,5 +548,56 @@ a reducer function is one which takes state and action, returns a new state, it'
 4) useContext
 5) useRef
 
+==============================================
 
+Single Page Application: SPA one html but different URLs shows different components
+Components Required:
+1) NavbarComponent
+2) ProductList
+3) ProductCard
+4) CartComp
+5) CartRow
+6) Details
+7) Default [ wrong URL ]
+8) ProductForm
+...
 
+Loading all components [ aprox 50-80] in even small application takes time and leads to FCP issue
+Solution: load only required comp initally and load other components lazily only on requirement
+
+Back and Prev buttons will navigate within that single html but different views
+react-router-dom library:
+1) different URLs has to render different components
+http://amazon.com/mobiles
+http://amazon.com/tvs
+http://amazon.com/checkout
+http://amazon.com/login
+
+2) Lazy loading of components
+
+ready-made atoms and molecules like button, navbar, card components from react-bootstrap.
+Alternate: MUI / Adobe Web Spectrum / primeReact / KendoUI / SyncFusion ,...
+
+3) axios for API calls instead of fetch 
+Axios: Best for large projects, complex applications, or when needing automatic JSON parsing and interceptors. 
+
+==================
+
+```
+REACT_JS % npm create vite@latest
+
+◇  Project name:
+│  ecomapp
+│
+◇  Select a framework:
+│  React
+│
+◇  Select a variant:
+│  JavaScript
+│
+◇  Install with npm and start now?
+│  Yes
+
+```
+
+ecomapp> npm i bootstrap react-bootstrap react-router-dom axios
