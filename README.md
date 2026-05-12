@@ -546,6 +546,7 @@ a reducer function is one which takes state and action, returns a new state, it'
 
 
 4) useContext
+    hook to simplify Context Consumer
 5) useRef
 
 ==============================================
@@ -601,4 +602,18 @@ REACT_JS % npm create vite@latest
 ```
 
 ecomapp> npm i bootstrap react-bootstrap react-router-dom axios
+
+Following actions to be implemented and mutate the state
+1) ADD_TO_CART
+2) INCREMENT
+3) DECREMENT
+4) CLEAR_CART
+5) REMOVE_FROM_CART
+
+Payload: CartItem is Product + qty + amount
+Makes case for using reducer function and useReducer
+
+============
+
+React Context: for sharing methods and state across application to avoid props drill
 

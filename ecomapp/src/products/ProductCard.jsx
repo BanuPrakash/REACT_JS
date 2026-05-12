@@ -1,7 +1,10 @@
+import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { CartContext } from '../context/CartContextProvider';
 
 export default function ProductCard({product}) {
+  let {addToCart} = useContext(CartContext);
   let {id, title, description, price, images} = product;
   return (
     <div className='col-md-4 my-2'>
@@ -15,7 +18,10 @@ export default function ProductCard({product}) {
       </Card.Body>
       <Card.Footer>
         ${price} &nbsp;
-        <Button variant="primary">Add to Cart</Button>
+        <Button variant="primary" 
+          onClick={() => addToCart( {id, title, description, price, images})}>
+            Add to Cart
+        </Button>
       </Card.Footer>
     </Card>
     </div>
