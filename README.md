@@ -626,3 +626,4 @@ Checkout:
 
 json-server: fake RESTful Web services
 
+ecomapp> npx json-server --watch data.json --port 1234
