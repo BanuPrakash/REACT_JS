@@ -12,7 +12,7 @@ export default function CartComp() {
   return (
     <div className='container'>
       {
-        cartItems.map(item => <CartRow />)
+        cartItems.map(item => <CartRow product={item} key={item.id} />)
       }
       <div className='row'>
           <div className='col-md-8'>

@@ -617,3 +617,12 @@ Makes case for using reducer function and useReducer
 
 React Context: for sharing methods and state across application to avoid props drill
 
+
+Checkout:
+1) Place Order by making API call to the server
+2) once order is saved to database
+3) redirect to landing page
+
+
+json-server: fake RESTful Web services
+

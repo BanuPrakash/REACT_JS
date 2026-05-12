@@ -1,6 +1,8 @@
 import { useReducer } from "react";
 import { createContext } from "react";
 import cartReducer from "../reducers/cartReducer";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // central placeholder for data to be accessed by nth component
 // without props-drill
@@ -13,6 +15,7 @@ const initialState =  {
     };
 
 export default function CartContextProvider(props) {
+    let navigate = useNavigate();
     // state here means data managed by cartReducer
     // dispatch to send action to reducer function
     let [state, dispatch] = useReducer(cartReducer, initialState);
@@ -20,7 +23,21 @@ export default function CartContextProvider(props) {
         dispatch({type:'ADD_TO_CART', payload: product})
     }
     function clearCart() {
-        dispatch({type: 'CLEAR_CART'})
+        // on login
+        // window.sessionStorage.setItem("user", "banu@gmail.com");
+        let order = {
+            "customer": window.sessionStorage.getItem("user"),
+            "items": state.cartItems,
+            "total": state.total,
+            "orderDate": new Date()
+        }
+
+        axios.post("http://localhost:1234/orders", order).then(response => {
+            console.log(response.data);
+             dispatch({type: 'CLEAR_CART'});
+            navigate("/");
+        })
+       
     }
     function increment(id) {
         dispatch({type:'INREMENT', payload: id})
