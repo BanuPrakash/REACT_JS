@@ -1,9 +1,13 @@
+import { lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import NavbarComp from './common/NavbarComp'
 import ProductList from './products/ProductList'
-import CartComp from './cart/CartComp'
-import Details from './products/Details'
 import Default from './common/Default'
+import { Suspense } from 'react'
+
+const CartComp = lazy(() => import('./cart/CartComp'))
+const Details = lazy (() => import('./products/Details'))
+
 
 function App() {
   return (
@@ -11,8 +15,16 @@ function App() {
     <NavbarComp />
     <Routes>
       <Route path='/products' element={<ProductList />}/>
-      <Route path='/cart' element={<CartComp />}/>
-      <Route path='/details/:id' element={<Details />}/>
+      <Route path='/cart' element={
+        <Suspense fallback={<div>Loading Cart....</div>}>
+            <CartComp />
+        </Suspense>
+        }/>
+      <Route path='/details/:id' element={
+        <Suspense fallback={<div>Loading Details....</div>}>
+          <Details />
+        </Suspense>
+        }/>
       <Route path='/' element={<ProductList />}/>
       <Route path='*' element={<Default />}/>
     </Routes>
