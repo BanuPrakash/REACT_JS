@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { CartContext } from '../context/CartContextProvider';
+import { Link } from 'react-router-dom';
 
 export default function ProductCard({product}) {
   // get function from cartContext
@@ -10,7 +11,10 @@ export default function ProductCard({product}) {
   return (
     <div className='col-md-4 my-2'>
       <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={images[0]}/>
+      <Link to={`/details/${id}`}>
+        <Card.Img variant="top" src={images[0]}/>
+      </Link>
+      
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>
