@@ -829,5 +829,77 @@ https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 https://jsonplaceholder.typicode.com/comments?_limit=3&_start=2
 
 
+==============================================================
 
+Tasks:
+1) Multipage registration of Form
+implement it with React Context and react-router-dom
+```
+state in context 
+
+Context:
+{
+    loginData: {
+        username: "",
+        email : "",
+        password : ""
+    },
+    personalData: {
+        "dob" : "",
+        "address" : ""
+    },
+    professionalData: {
+        "education" : "",
+        "skills" : ""
+    }
+}
+
+a) http://localhost:3000
+Form with login data
+Next
+b) http://localhost:3000/personal
+Form for personal data
+Next
+Back
+c) http://localhost:3000/professional
+enter professional details 
+Next
+Back
+d) http://localhost:3000/confirm
+Back
+
+
+2) Using Context create MCQ application
+
+```
+=========================
+
+Redux: Predicatable State management 
+NextJS: for SSR for react component
+
+```
+When to Use Context API
+
+Simple Global Data: Use it for static or rarely changing data like Themes (dark/light mode), Current Language (i18n), or avatar and name.
+
+Avoiding Prop Drilling: When your only goal is to avoid passing props through several layers of components.
+
+Small to Medium Apps: Where the state logic is straightforward and doesn't require complex transformations.
+
+Cons: whenever state changes, it triggers re-rendering
+
+When to Use Redux
+
+Large, Complex Apps: When multiple components across the app need to access and modify the same data (e.g., a shopping cart, complex dashboards, or feeds).
+
+Frequent State Updates: If the state changes rapidly, Redux's selector-based subscriptions prevent massive, unnecessary re-renders.
+
+Advanced Logic: When you need middleware for asynchronous side effects (like API calls) or consistent patterns for how state is updated
+
+Redux: can be developed as seperate state management module, tested and can be integrated with different libraries and frameworks like Angular, react, Vue, JS, jQuery
+
+Supports Time-travel debugging
+
+Redux: Good for Microfrontend application for global state managment
+```
 
