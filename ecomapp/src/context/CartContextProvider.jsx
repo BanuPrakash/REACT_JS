@@ -42,6 +42,7 @@ export default function CartContextProvider(props) {
     function increment(id) {
         dispatch({type:'INREMENT', payload: id})
     }
+    
     // state managed by cartReducer is copied onto Context
     // also functions are added to Context
     return <CartContext.Provider value={{...state, addToCart, clearCart, increment}}>

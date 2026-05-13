@@ -627,3 +627,35 @@ Checkout:
 json-server: fake RESTful Web services
 
 ecomapp> npx json-server --watch data.json --port 1234
+
+===================================
+Day 3: 
+* TypeScript
+* convert this ecomapp to typescript
+* Controlled and Uncontrolled components
+* Tanstack Query
+* remaining few important hooks..
+* Redux: Predicatable State Managment
+
+Day 2 Recap:
+* react-router-dom
+- Component display based on URL, essential for SPA
+- Lazy loading of components, required to solve FCP, Core Web Vital
+
+* for atoms and molecules: ready to use components from 3rd party like MUI, react-boostrap, primereact,..
+
+* bootstrap: RWD, CSS Framework
+* axios: for making API calls instead of fetch
+* using hooks: useState, useEffect, useReducer, reducer, context, useContext [ Context Consumer]
+* json-server: FAKE RESTful WS
+
+================
+
+Day 3:
+* memo:  same shouldComponentUpdate() of class component
+Memoization is an optimization technique used to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again. 
+
+React.memo is a higher-order component (HOC) used to optimize performance by preventing unnecessary re-renders of functional components
+
+Closure: returned function can access members of outer function
+

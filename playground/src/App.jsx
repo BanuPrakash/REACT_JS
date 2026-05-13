@@ -1,14 +1,15 @@
 import { useState } from "react"
 import First from "./context/First"
 import ProfileContextProvider from "./context/ProfileContextProvider"
-import ParentComponent from "./renderissue/ParentComponent"
+// import ParentComponent from "./renderissue/ParentComponent"
 import UsersComponent from "./hooks/UsersComponent";
 import PostsComponent from "./hooks/PostsComponent";
-import TaskManager from "./hooks/TaskManager";
+import ParentComponent from "./memoziation/ParentComponent";
+// import TaskManager from "./hooks/TaskManager";
 
 
 function App() {
-  return <TaskManager />
+  return <ParentComponent />
 
   // let [id, setId] = useState(1);
   // return <div className="row">
