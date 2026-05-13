@@ -5,12 +5,13 @@ import ProfileContextProvider from "./context/ProfileContextProvider"
 import UsersComponent from "./hooks/UsersComponent";
 import PostsComponent from "./hooks/PostsComponent";
 import ParentComponent from "./memoziation/ParentComponent";
+import UncontrolledComponent from "./hooks/UncontrolledComponent";
 // import TaskManager from "./hooks/TaskManager";
 
 
 function App() {
-  return <ParentComponent />
-
+  // return <ParentComponent />
+  return <UncontrolledComponent />
   // let [id, setId] = useState(1);
   // return <div className="row">
   //   <div className="col-md-4">

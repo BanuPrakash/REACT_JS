@@ -659,3 +659,34 @@ React.memo is a higher-order component (HOC) used to optimize performance by pre
 
 Closure: returned function can access members of outer function
 
+* Controlled and Uncontrolled components
+```
+Controlled Components
+In a controlled component, the DOM value like input text value is controlled by React state.
+ let [taskData, setTaskData] = useState();
+ <input type="text" onChange={(evt) => setTaskData(evt.target.value)}/> 
+
+Data Handling: React state holds the input value.
+
+Updates: An onChange handler updates the state on every keystroke.
+
+Pros: Predictable, allows real-time validation, good for search operations
+
+Cons: Requires more code (state definition, handler functions)., more events to handle
+Each time state changes re-rendering happens
+
+Use Case: Form inputs requiring live validation, dynamic styling, or conditional logic (e.g., username/password forms). search operations
+
+Uncontrolled Components:
+
+Uncontrolled components allow the DOM to handle form data, similar to traditional HTML forms.Data Handling: 
+
+The DOM stores the value internally.
+Updates: Refs are used to pull the value from the DOM only when needed (e.g., on submit).
+
+Pros: Requires less code, simple to integrate with non-React libraries, good for quick form submissions.
+Cons: Harder to perform real-time validation or modify input data.
+
+Use Case: Simple forms, or when you only need to read the value upon submission.
+
+```
