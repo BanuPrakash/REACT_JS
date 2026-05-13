@@ -807,7 +807,16 @@ Fetching data using fetch and axios.
 
 Tanstack Query for fetching?
 Powerful data-fetching and state management library for react, earlier it was called as react query.
-Caching mechanism, refetching, infininte scroll, ...
+Caching mechanism, refetching, Parallel queries, infininte scroll, ...
 
 npm i @tanstack/react-query @tanstack/react-query-devtools
+
+Assume I need to get Users with specific IDs:
+[1,7,8,3]
+n hits to Backend 1 at a time
+https://jsonplaceholder.typicode.com/users/1
+https://jsonplaceholder.typicode.com/users/7
+https://jsonplaceholder.typicode.com/users/8
+https://jsonplaceholder.typicode.com/users/3
+
 

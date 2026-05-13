@@ -1,7 +1,10 @@
-import {useQuery} from '@tanstack/react-query'
+import {useQuery, useQueryClient} from '@tanstack/react-query'
 import type { User } from '../model/types'
+import { Button } from 'react-bootstrap'
 
 export default function UserList() {
+    const queryClient = useQueryClient();
+
     const usersQuery = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
@@ -17,7 +20,13 @@ export default function UserList() {
         return <div> Something went Wrong :-( </div>
     }
 
+    function reload() {
+        // invalidate the cache
+        queryClient.invalidateQueries({queryKey: ['users']})
+    }
+
     return <div className='container'>
+        <Button onClick={reload}>Reload</Button>
         {
             usersQuery.data.map( (user: User) => (
                 <div key={user.id}>
