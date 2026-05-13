@@ -690,3 +690,114 @@ Cons: Harder to perform real-time validation or modify input data.
 Use Case: Simple forms, or when you only need to read the value upon submission.
 
 ```
+
+TypeScript:
+```
+Strongly typed programming language
+JS is loosely typed and dynamically typed language.
+
+var name = "Roger"; // string
+name = 24; // allowed in JS but not in typescript
+
+Key Benefits of TypeScript in ReactEarly Error Detection: 
+TypeScript catches common bugs—like passing a string where a number is expected or accessing a property that doesn't exist—at compile time rather than during runtime.
+
+var name = 20;
+name.toUpperCase(); // runtime we get error in JS, whereas typescript compiler triggers error at compilation time
+
+Superior Autocomplete (IntelliSense): When you use a component, your IDE will suggest exactly which props it requires and their expected shapes. 
+
+This reduces the need to constantly check documentation.
+Fearless Refactoring: Renaming a prop or changing a data structure is safer because TypeScript will instantly highlight every file that needs to be updated to match the change.
+
+Clearer Component Contracts: By defining interfaces for your props and state, you create "live" documentation that tells other developers exactly how your component is intended to be used.
+function addProduct(product:Product) {
+
+}
+
+```
+
+TypeScript --> tsc --> JavaScript --> JS engine
+
+Data types:
+1) Basic types: string, boolean, number, enum
+let name:string = "Roger";
+let age:number = 24;
+
+2) type type: to define shape of object
+```
+type Product = {
+    id: number,
+    title: string,
+    price: number
+}
+
+let product: Product = {"id": 44, "title": "A", "price": 5343.11};
+
+function addProduct(product:Product) {
+    ..
+}
+
+addProduct({"id": 44, "title": "A", "price": 5343.11});
+```
+
+3) Union type: [similar to inheritance]
+
+```
+type Mobile = Product & {
+    "connectivity": string,
+    "camera": string
+}
+```
+
+4) interface: similar to type can be used to define the shape of object
+4.1) 
+```
+interface Product  {
+    id: number,
+    title: string,
+    price: number
+}
+```
+4.2) can be used for realization relationship
+```
+interface Renderer {
+    render(): JSX;
+}
+
+class DomRenderer implements Renderer {
+    ...
+    render(): JSX {
+        ...
+    }
+}
+
+class TvRenderer implements Renderer {
+    ...
+    render(): JSX {
+        ...
+    }
+}
+```
+
+TypeCasting aka TypeAssertion : we know more about the type than typescript
+
+Task: Convert ecomapp to use typescript instead of JavaScript
+
+```
+npm create vite@latest
+
+│
+◇  Project name:
+│  ecomts
+│
+◇  Select a framework:
+│  React
+│
+◇  Select a variant:
+│  TypeScript
+│
+◇  Install with npm and start now?
+│  Yes
+```
+ecomts> npm i bootstrap react-bootstrap react-router-dom axios
