@@ -801,3 +801,13 @@ npm create vite@latest
 │  Yes
 ```
 ecomts> npm i bootstrap react-bootstrap react-router-dom axios
+
+====
+Fetching data using fetch and axios.
+
+Tanstack Query for fetching?
+Powerful data-fetching and state management library for react, earlier it was called as react query.
+Caching mechanism, refetching, infininte scroll, ...
+
+npm i @tanstack/react-query @tanstack/react-query-devtools
+

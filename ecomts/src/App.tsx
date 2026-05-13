@@ -5,6 +5,7 @@ import ProductList from './products/ProductList'
 import Default from './common/Default'
 import { Suspense } from 'react'
 import CartComp from './cart/CartComp';
+import UserList from './users/UserList'
 
 const Details = lazy (() => import('./products/Details'))
 
@@ -14,6 +15,7 @@ function App() {
     <NavbarComp />
     <Routes>
       <Route path='/products' element={<ProductList />}/>
+       <Route path='/users' element={<UserList />}/>
        <Route path='/cart' element={
         <Suspense fallback={<div>Loading Cart....</div>}>
           <CartComp />
