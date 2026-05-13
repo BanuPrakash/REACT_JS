@@ -16,6 +16,7 @@ export default function NavbarComp() {
             <Nav.Link as={Link} to="/products">Products</Nav.Link>
             <Nav.Link as={Link} to="/cart">Cart <Badge>{quantity}</Badge></Nav.Link>
             <Nav.Link as={Link} to="/users">User</Nav.Link>
+             <Nav.Link as={Link} to="/comments">Infinite Scroll</Nav.Link>
             <Nav.Link>Form</Nav.Link>
           </Nav>
         </Container>

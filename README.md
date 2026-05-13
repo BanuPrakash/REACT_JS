@@ -819,4 +819,15 @@ https://jsonplaceholder.typicode.com/users/7
 https://jsonplaceholder.typicode.com/users/8
 https://jsonplaceholder.typicode.com/users/3
 
+====
+
+Infinite Queries: infinite scroll
+X, Facebook, instagram ,....
+
+https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+
+https://jsonplaceholder.typicode.com/comments?_limit=3&_start=2
+
+
+
 
