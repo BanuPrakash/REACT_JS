@@ -15,6 +15,7 @@ export default function NavbarComp() {
           <Navbar.Brand as={Link} to="/">Acme</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/products">Products</Nav.Link>
+              <Nav.Link as={Link} to="/todos">Thunk</Nav.Link>
             <Nav.Link as={Link} to="/cart">Cart <Badge>{quantity}</Badge></Nav.Link>
             <Nav.Link as={Link} to="/users">User</Nav.Link>
              <Nav.Link as={Link} to="/comments">Infinite Scroll</Nav.Link>

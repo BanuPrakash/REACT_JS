@@ -8,6 +8,7 @@ import CartComp from './cart/CartComp';
 // import UserList from './users/UserList'
 import UsersParallelList from './users/UsersParallelList'
 import Comments from './comments/Comments'
+import Todos from './Todos'
 
 const Details = lazy (() => import('./products/Details'))
 
@@ -17,6 +18,7 @@ function App() {
     <NavbarComp />
     <Routes>
       <Route path='/products' element={<ProductList />}/>
+      <Route path='/todos' element={<Todos />}/>
        <Route path='/comments' element={<Comments />}/>
        {/* <Route path='/users' element={<UserList />}/> */}
        <Route path='/users' element={<UsersParallelList userIds={[3,1,7,8]} />}/>
