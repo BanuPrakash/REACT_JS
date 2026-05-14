@@ -941,17 +941,23 @@ Legacy Redux: for understanding purpose
 Redux Toolkit: right way to use Redux
 
 
-function mapDispatchToProps(dispatch) {
-    return {
-        add: product => dispatch({"type":"ADD_TO_CART", payload: product}),
-        clear: () => dispatch({"type":"CLEAR_CART"})
-    }
-}
+1) Task Manager App with Redux : Legacy Redux
+2) convert ecomts to use Redux : RTK toolkit
+
+```
+npm create vite@latest
+Project name:
+│  taskmanager-redux
+│
+◇  Select a framework:
+│  React
+│
+◇  Select a variant:
+│  JavaScript
+│
+◇  Install with npm and start now?
+│  Yes
 
 
-<Button
-onClick={() => props.add(product)}>
-    Add to Cart
-</Button>
-
-
+taskmanager-redux> npm i redux react-redux
+```
