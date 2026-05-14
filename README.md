@@ -962,6 +962,53 @@ Project name:
 taskmanager-redux> npm i redux react-redux
 ```
 
+Redux Toolkit: instead of Redux [ layer on top of Redux]
+* use configureStore() instead of createStore()
+* use createSlice, no need for writing reducer files seperately
+* No need for connect, mapStateToProps, mapDispatchToProps
+a) useSelector: The selector is approximately equivalent to the mapStateToProps argument to connect conceptually.
+b) useDispatch: equivalent to the mapDispatchToProps argument to connect conceptually.
 
+```
+const initialState = [];
 
+const taskSlice = createSlice({
+  name: 'tasks',
+  initialState,
+  reducers: {
+    addTask: (state, action) => {
+      state.push[{id: new Data(), task: action.payload, completed: false}]
+    },
+    toggleTask: (state, action) => {
+      state.map(task => task.id === action.payload ? 
+                    {...task, completed: ! task.completed}: task)
+    },
+    clearTasks: (state) => {
+      state = [];
+    },
+  },
+})
+
+```
+
+Migrate Ecomts to use Redux tool kit instead of Context.
+
+Steps:
+1) npm create vite@latest
+Name: ecomts-rtk
+React
+TypeScript
+
+2) ecomts-rtk %  npm i @reduxjs/toolkit react-redux @tanstack/react-query @tanstack/react-query-devtools react-router-dom bootstrap react-bootstrap axios
+
+3) Copy folders and files from ecomts to ecomts-rtk
+
+4) Remove Context and reducers folders
+
+5) remove all references of Context in the application
+a) main.tsx
+b) NavbarComp.tsx
+c) ProductCard.tsx
+d) CartComp.tsx
+e) CartRow.tsx
 
