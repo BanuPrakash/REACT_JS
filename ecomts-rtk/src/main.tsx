@@ -8,6 +8,8 @@ import App from './App.jsx'
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
+import {Provider} from 'react-redux'
+import store from './redux/store.js'
 // const queryClient = new QueryClient();
 
 const queryClient = new QueryClient({
@@ -17,7 +19,9 @@ const queryClient = new QueryClient({
 createRoot(document.getElementById('root') as HTMLDivElement).render(
         <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-                    <App />
+            <Provider store={store}>
+                 <App />
+            </Provider>
         </BrowserRouter>
         <ReactQueryDevtools />
         </QueryClientProvider>

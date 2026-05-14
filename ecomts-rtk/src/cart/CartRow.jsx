@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { Button } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { increment } from "../redux/features/cartSlice";
 
 
 export default function CartRow({product}) {
   let {id, title, price, images, qty, amount} = product;
-
+  let dispatch = useDispatch();
   return (
     <div className='row my-2'>
       <div className='col-md-2'>
@@ -19,7 +21,7 @@ export default function CartRow({product}) {
       <div className='col-md-4'>
         <Button> - </Button>
         &nbsp; {qty} &nbsp;
-        <Button > + </Button>
+        <Button onClick={() => dispatch(increment(id))}> + </Button>
       </div>
       <div className='col-md-2'>
         <p>${amount.toFixed(2)}</p>

@@ -5,7 +5,7 @@ import ProductList from './products/ProductList'
 import Default from './common/Default'
 import { Suspense } from 'react'
 import CartComp from './cart/CartComp';
-import UserList from './users/UserList'
+// import UserList from './users/UserList'
 import UsersParallelList from './users/UsersParallelList'
 import Comments from './comments/Comments'
 
