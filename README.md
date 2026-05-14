@@ -903,3 +903,55 @@ Supports Time-travel debugging
 Redux: Good for Microfrontend application for global state managment
 ```
 
+Recap:
+1) JSX, React.createElement(), react-dom
+2) VDOM -- Reconcilliation -- DOM
+3) functional components vs class components
+4) Component Life cycle methods: componentDidMount, componentDidupdate, shouldComponentUpdate, componentWillUnmount
+5) functional components:
+Hooks introduced in React 16.8 which allowed to get whatever functionalites present in class component to functional components.
+a) useState
+b) useEffect
+c) useReducer
+d) useContext : Context Consumer
+e) useRef: uncontrolled component
+f) useParams
+6) Context: to prevent props-drill; Provider, Consumer
+7) react-router-dom; Suspense
+8) TanStack Query: advance data fetching api; caching, parallel queries, infinite query [use it along with Intersection Observer]
+
+===========
+
+Day 4:
+State Managment:
+Context was never intended for State managment, was meant only to avoid props drill;
+developers started to use it for state management which is good enough for small and medium sized applicaiton;
+Issue is: every time state changes in Context, re-render happens, debugging is difficult
+
+----
+
+Facebook uses MVC architecture pattern
+Facebook --> Flux Architecture to solve MVC issues
+Flux Architecture pattern was made open source
+1) Redux
+2) Mobx
+...
+
+Legacy Redux: for understanding purpose
+Redux Toolkit: right way to use Redux
+
+
+function mapDispatchToProps(dispatch) {
+    return {
+        add: product => dispatch({"type":"ADD_TO_CART", payload: product}),
+        clear: () => dispatch({"type":"CLEAR_CART"})
+    }
+}
+
+
+<Button
+onClick={() => props.add(product)}>
+    Add to Cart
+</Button>
+
+
